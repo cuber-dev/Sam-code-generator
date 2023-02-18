@@ -40,9 +40,11 @@ header{
 /* ================================== Main styles ========================================== */
 
 main{
-    display: grid;
-    row-gap: 1rem;
-    padding: min(.5rem,2.5rem) 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    row-gap: 2rem;
+    padding: 25px;
 }
 main .about-article{
     width: min(90%,550px);
@@ -50,7 +52,7 @@ main .about-article{
     padding: var(--text-size);
     background-color: #ece9e9;
     border-radius: var(--text-size);
-    line-height: 25px;
+    line-height: 25px 0;
 }
 main h3{
     margin: var(--text-size) 0;
