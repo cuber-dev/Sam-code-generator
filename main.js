@@ -17,14 +17,21 @@ if (isNaN(getWidth) || isNaN(getHeight)) {
   imgHeight = getHeight
 }
 //==================== Adding code strings =======================
-const image_code = document.getElementById("code-img");
-const div_code = document.getElementById("code-img-div");
-const bg_code = document.getElementById("code-img-bg");
+const image_code_1 = document.getElementById("code-img-1");
+const image_code_2 = document.getElementById("code-img-2");
+const div_code_1 = document.getElementById("code-img-div-1");
+const div_code_2 = document.getElementById("code-img-div-2");
+const bg_code_1 = document.getElementById("code-img-bg-1");
+const bg_code_2 = document.getElementById("code-img-bg-2");
 
 
-image_code.innerText = `<img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="image">\n`;
-div_code.innerText = `<div class="container">\n  <img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="image">\n</div>\n`;
-bg_code.innerText = `background-image: url("https://unsplash.it/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
+
+image_code_1.innerText = `<img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="image">\n`;
+image_code_2.innerText = `<img src="https://picsum.photos/${imgWidth}/${imgHeight}" alt="image">\n`;
+div_code_1.innerText = `<div class="container">\n  <img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="image">\n</div>\n`;
+div_code_2.innerText = `<div class="container">\n  <img src="https://picsum.photos/${imgWidth}/${imgHeight}" alt="image">\n</div>\n`;
+bg_code_1.innerText = `background-image: url("https://unsplash.it/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
+bg_code_2.innerText = `background-image: url("https://picsum.photos/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
 
 // ======================= Copy icon code ============================
 

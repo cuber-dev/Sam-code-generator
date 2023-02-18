@@ -98,6 +98,7 @@ main .box{
 
 main .code-box{
     padding: 1.5rem .5rem 5px .5rem;
+    margin: 5px 0;
     background-color: #e7e4e4;
     border-radius: 10px;
     height: auto;
