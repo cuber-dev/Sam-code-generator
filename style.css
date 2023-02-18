@@ -14,12 +14,19 @@ p{
     text-align: justify;
     font-size: 20px;
 }
+i{
+  font-size:13px;
+}
 a{
     text-decoration: none;
     color: inherit;
 }
 a:is(:hover,:focus,:active){
     outline: .5px solid #5c4a4a;
+}
+:focus{
+  outline: .5px solid white;
+  outline-offset: 2px; 
 }
 body{
     background-color: #0c0c0c;
@@ -64,7 +71,7 @@ main{
     padding: 25px;
 }
 main .about-article{
-    width: min(90%,550px);
+    width: min(98%,550px);
     height: max-content;
     padding: var(--text-size);
     background-color: #ece9e9;
@@ -81,7 +88,7 @@ main .codes-container{
     background-color: #ece9e9;
     display: grid;
     row-gap: 1rem;
-    width: min(90%,550px);
+    width: min(98%,550px);
     border-radius: var(--text-size);
     padding: var(--text-size);
 }
@@ -105,6 +112,15 @@ main .code-box{
     position: relative;
     overflow: auto;
 }
+main .code-box::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  height: 2rem;
+  width: 100%;
+  background-color: rebeccapurple;
+}
 /* pre tag holds the code */
 main pre{
     width: 100%;
@@ -118,9 +134,13 @@ main .copy {
     position: absolute;
     top: 0px;
     right: 0px;
-    padding: 10px;
+    padding: 5px;
+    z-index: 5;
+    color: white;
+    background: transparent;
     cursor: pointer;
 }
+
 /* this class only works when clicked on.copy */
 main .show-copied {
   animation: show 1s ease-in forwards 1;
