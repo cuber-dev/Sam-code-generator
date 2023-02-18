@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/* ================================== General styles ========================================== */
+:root{
+    --text-size: .9rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    word-wrap: break-word;
+    text-overflow: clip;
+}
+p{
+    text-align: justify;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:is(:hover,:focus,:active){
+    outline: .5px solid #5c4a4a;
+}
+body{
+    background-color: #0c0c0c;
+}
+
+/* ================================== Header styles ========================================== */
+
+header{
+    text-align: center;
+    background-color: #444343;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: -1px 1px 5px #5c4a4a;
+    font-size: min(16px,5vw);
+    padding: 2rem .1rem;
+}
+
+/* ================================== Main styles ========================================== */
+
+main{
+    display: grid;
+    row-gap: 1rem;
+    padding: min(.5rem,2.5rem) 1rem;
+}
+main .about-article{
+    width: min(91%,600px);
+    height: max-content;
+    padding: var(--text-size);
+    background-color: #ece9e9;
+    border-radius: var(--text-size);
+    line-height: 25px;
+}
+main h3{
+    margin: var(--text-size) 0;
+    font-size: 30px;
+}
+
+main .codes-container{
+    background-color: #ece9e9;
+    display: grid;
+    row-gap: 1rem;
+    width: min(91%,600px);
+    border-radius: var(--text-size);
+    padding: var(--text-size);
+}
+main .code-heading{
+   display: inline-block;
+   margin: 3px auto;
+}
+/* Code printing styles */
+main .code-box{
+    padding: 1rem .5rem;
+    background-color: #e7e4e4;
+    border-radius: 10px;
+    height: auto;
+    position: relative;
+}
+
+main .copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* ================================== Footer styles========================================== */
+
+footer{
+    margin-top: 200px;
+    background-color: #444343;
+    padding: var(--text-size);
+    color: white;
+}
+footer h2{
+    text-align: center;
+    font-size: 40px;
+    text-decoration: underline;
+}
+footer h3{
+    font-size: 28px;
+}
+footer > *:not(h2){
+    width: 350px;
+    margin: var(--text-size);
+    border-radius: var(--text-size);
+    padding: var(--text-size);
+}
+footer > *{
+    line-height:40px;
+}
+footer .about-details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+@media (max-width:600px){
+    h3{
+        font-size: 15px;
+    }
+    footer h2{
+        font-size: 25px;
+    }
+    p{
+        font-size: 16px;
+    }
+    footer > *:not(h2){
+        width: auto;
+    }
+}
+/* ======================================== END ========================================== */
