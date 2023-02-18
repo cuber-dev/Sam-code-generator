@@ -2,31 +2,31 @@
 
 let imgHeight;
 let imgWidth;
+//================ Taking input from user =======================
+let getWidth = parseInt(window.prompt('Please Enter the Width You Want\nIt must be a number'), 10);
+let getHeight = parseInt(window.prompt('Please Enter the Height You Want\nIt must be a number'), 10);
 
-let getWidth = window.prompt('Please Enter the Width You Want\nIt must be a number')
-let getHeight = window.prompt('Please Enter the Height You Want\nIt must be a number')
-
-if (getWidth && getHeight) {
-  imgHeight = getHeight
-  imgWidth = getWidth
+if (isNaN(getWidth) || isNaN(getHeight)) {
+  // Check if either input is not a number
+  alert('Please enter a valid number for both width and height.');
+  window.location.reload(); // Reload the page if either input is not a valid number
 } else {
-  window.location.reload()
+  // Both inputs are valid numbers
+  console.log(`Width: ${getWidth}, Height: ${getHeight}`);
+  imgWidth = getWidth
+  imgHeight = getHeight
 }
-
+//==================== Adding code strings =======================
 const image_code = document.getElementById("code-img");
 const div_code = document.getElementById("code-img-div");
 const bg_code = document.getElementById("code-img-bg");
 
 
-image_code.innerText = `<img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="">\n`;
-div_code.innerText = `<div>\n  <img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="">\n</div>\n`;
+image_code.innerText = `<img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="image">\n`;
+div_code.innerText = `<div class="container">\n  <img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="image">\n</div>\n`;
 bg_code.innerText = `background-image: url("https://unsplash.it/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
 
-// Remove the actual images
-const images = document.querySelectorAll("img");
-images.forEach((img) => {
-    img.parentNode.removeChild(img);
-});
+// ======================= Copy icon code ============================
 
 // Get all copy buttons
 const copyButtons = document.querySelectorAll(".copy");
@@ -54,3 +54,19 @@ copyButtons.forEach((button) => {
         document.body.removeChild(tempTextarea);
     });
 });
+
+
+
+
+//Copy tooltip code 
+const copiedElement = document.querySelector('.copied');
+
+for (let i = 0; i < copyButtons.length; i++) {
+  copyButtons[i].addEventListener('click', function() {
+    copiedElement.classList.add('show-copied');
+
+    setTimeout(function() {
+      copiedElement.classList.remove('show-copied');
+    }, 800);
+  });
+}

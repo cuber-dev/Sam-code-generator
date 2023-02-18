@@ -24,6 +24,7 @@ a:is(:hover,:focus,:active){
 body{
     background-color: #0c0c0c;
 }
+
 ::-webkit-scrollbar{
   height: 5px;
   width: 5px;
@@ -88,7 +89,8 @@ main .code-heading{
    display: inline-block;
    margin: 3px 0;
 }
-/* this box class contains the code-box container and code pre tag */
+/* this box class contains the code-box 
+   container and code pre tag */
 main .box{
     width: 100%;
     overflow: auto;
@@ -108,7 +110,9 @@ main pre{
     padding: 1rem 0;
     overflow: auto;
 }
-/* =================================================================== */
+
+
+/* =================================== Copy styles ================================ */
 main .copy {
     position: absolute;
     top: 0px;
@@ -116,12 +120,35 @@ main .copy {
     padding: 10px;
     cursor: pointer;
 }
+/* this class only works when clicked on.copy */
+main .show-copied {
+  animation: show 1s ease-in forwards 1;
+}
 
+@keyframes show {
+  from {
+    opacity: 1;
+  }
 
+  to {
+    opacity: 0;
+  }
+}
+/* This tool tip will appear when 
+   clicked on.copy*/
+.copied {
+  position: fixed;
+  bottom: 40px;
+  left: 30%;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  opacity: 0;
+  transition: all 300ms ease-in;
+}
 
-
-
-/* ================================== Footer styles========================================== */
+/* ================================== Footer styles ========================================== */
 
 footer{
     margin-top: 200px;
@@ -150,6 +177,8 @@ footer .about-details{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+/* =================================== Mobile styles ======================================*/
 @media (max-width:600px){
     h3{
         font-size: 15px;
