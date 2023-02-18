@@ -24,7 +24,23 @@ a:is(:hover,:focus,:active){
 body{
     background-color: #0c0c0c;
 }
-
+::-webkit-scrollbar{
+  height: 5px;
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background: none; 
+}
+::-webkit-scrollbar-thumb{
+  background: lightgrey;
+  border-radius: 100vw; 
+}
+@supports (scrollbar-color: grey white){
+  *{
+    scrollbar-color: lightgrey none; 
+    scrollbar-width: thin;
+  }
+}
 /* ================================== Header styles ========================================== */
 
 header{
