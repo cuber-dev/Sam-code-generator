@@ -45,7 +45,7 @@ main{
     padding: min(.5rem,2.5rem) 1rem;
 }
 main .about-article{
-    width: min(91%,600px);
+    width: min(90%,550px);
     height: max-content;
     padding: var(--text-size);
     background-color: #ece9e9;
@@ -55,34 +55,47 @@ main .about-article{
 main h3{
     margin: var(--text-size) 0;
     font-size: 30px;
+    text-align: left;
 }
 
 main .codes-container{
     background-color: #ece9e9;
     display: grid;
     row-gap: 1rem;
-    width: min(91%,600px);
+    width: min(90%,550px);
     border-radius: var(--text-size);
     padding: var(--text-size);
 }
 main .code-heading{
    display: inline-block;
-   margin: 3px auto;
+   margin: 3px 0;
 }
-/* Code printing styles */
+/* this box class contains the code-box container and code pre tag */
+main .box{
+    width: 100%;
+    overflow: auto;
+}
+
 main .code-box{
-    padding: 1rem .5rem;
+    padding: 1.5rem .5rem 5px .5rem;
     background-color: #e7e4e4;
     border-radius: 10px;
     height: auto;
     position: relative;
+    overflow: auto;
 }
-
+/* pre tag holds the code */
+main pre{
+    width: 100%;
+    padding: 1rem 0;
+    overflow: auto;
+}
+/* =================================================================== */
 main .copy {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
     cursor: pointer;
 }
 
@@ -123,11 +136,12 @@ footer .about-details{
     h3{
         font-size: 15px;
     }
+    p,a,.codes-container h3{
+        font-size: 5vw;
+    }
+    
     footer h2{
         font-size: 25px;
-    }
-    p{
-        font-size: 16px;
     }
     footer > *:not(h2){
         width: auto;
