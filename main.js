@@ -31,7 +31,7 @@ image_code_2.innerText = `<img src="https://picsum.photos/${imgWidth}/${imgHeigh
 div_code_1.innerText = `<div class="container">\n  <img src="https://unsplash.it/${imgWidth}/${imgHeight}" alt="image">\n</div>\n`;
 div_code_2.innerText = `<div class="container">\n  <img src="https://picsum.photos/${imgWidth}/${imgHeight}" alt="image">\n</div>\n`;
 bg_code_1.innerText = `background-image: url("https://unsplash.it/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
-bg_code_2.innerText = `background-image: url("https://picsum.photos/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
+bg_code_2.innerText = `background-image: url("https://picsum/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
 
 // ======================= Copy icon code ============================
 

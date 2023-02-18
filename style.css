@@ -62,7 +62,9 @@ header{
 }
 
 /* ================================== Main styles ========================================== */
-
+main label{
+  color: #ffffff;
+}
 main{
     display: flex;
     flex-direction: column;
