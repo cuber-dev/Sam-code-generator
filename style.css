@@ -81,10 +81,10 @@ header .nav-button {
   display: inline-block;
   cursor: pointer;
   position: fixed;
-  top:10px;
-  right: 10px;
+  top:20px;
+  right: 20px;
   background: none; 
-  border: none; 
+  border: none;
   transition: all 500ms ease;
 }
 .nav-button .btn-line {
@@ -304,6 +304,10 @@ footer .about-details{
     }
     p,a,.codes-container h3{
         font-size: 5vw;
+    }
+    header .nav-button{
+      top:5px;
+      right: 5px;
     }
     footer{
       padding: .5rem;
