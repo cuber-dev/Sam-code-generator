@@ -31,12 +31,15 @@ a{
     text-decoration: none;
     color: inherit;
 }
-a:is(:focus){outline: .5px solid #5c4a4a;}
+main a:is(:focus){outline: .5px solid #5c4a4a;}
 
-:is(header,nav,a,li,ul,label){z-index: 12;}
 :focus{
   outline: .5px solid white;
   outline-offset: 2px; 
+}
+:is(header,nav,a,li,ul,label){
+  z-index: 12;
+  outline: none;
 }
 
 
@@ -111,7 +114,8 @@ header .nav-button {
   font-weight: bold; 
   padding: 5px; 
   border-radius: 5px;
-  margin: 2px; 
+  margin: 2px;
+  outline:none;
 }
 #nav{
   position:fixed;
