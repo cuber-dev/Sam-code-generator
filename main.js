@@ -77,3 +77,7 @@ for (let i = 0; i < copyButtons.length; i++) {
     }, 800);
   });
 }
+
+
+//navbar disappear code
+
