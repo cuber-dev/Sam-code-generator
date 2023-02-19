@@ -1,16 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 /* ================================== General styles ========================================== */
-:root{
-    --text-size: .9rem;
+
+:root {
+  /* Default font size */
+  --pc-font: 16px;
+  --mobile-font: 14px;
+  --text-size: .9rem;
 }
-html{
+/* Update font size for larger screens */
+@media screen and (min-width: 768px) {
+  :root {
+    --pc-font: 18px;
+    --mobile-font: 16px;
+  }
+}
+html {
   scroll-padding: 110px;
   scroll-behavior: smooth;
 }
-body {
-  background-color: #0c0c0c;
-  padding-top: 101px; 
-}
+
+  body {
+    background-color: #0c0c0c;
+    padding-top: 101px;
+    font-size: clamp(var(--mobile-font), 1.2vw, var(--pc-font));
+  }
+/*===== converted all font size to clamp =========================*/
+
 *{
     margin: 0;
     padding: 0;
@@ -22,10 +37,6 @@ body {
 }
 p{
     text-align: justify;
-    font-size: 20px;
-}
-i{
-  font-size:13px;
 }
 a{
     text-decoration: none;
@@ -61,7 +72,6 @@ main a:is(:focus){outline: .5px solid #5c4a4a;}
   }
 }
 /* ================================== Header styles ========================================== */
-
 header{
     position: fixed;
     top:0;
@@ -71,7 +81,6 @@ header{
     color: white;
     letter-spacing: 3px;
     text-shadow: -1px 1px 5px #5c4a4a;
-    font-size: min(16px,5vw);
     padding: 1.5rem .1rem;
 }
 header h1{     text-align: center; }
@@ -173,7 +182,6 @@ main .about-article{
 }
 main h3{
     margin: var(--text-size) 0;
-    font-size: 30px;
     text-align: left;
 }
 
@@ -272,11 +280,7 @@ footer{
 }
 footer h2{
     text-align: center;
-    font-size: 40px;
     text-decoration: underline;
-}
-footer h3{
-    font-size: 28px;
 }
 footer > *:not(h2){
     width: 350px;
@@ -295,23 +299,13 @@ footer .about-details{
 
 /* =================================== Mobile styles ======================================*/
 @media (max-width:600px){
-    h3{
-        font-size: 15px;
-    }
     header .nav-button{
       top: 3px;
       right: 3px;
     }
     #nav{text-align: left;}
-    main  p,a,.codes-container h3{
-        font-size: 5vw;
-    }
-    
     footer{
       padding: .5rem;
-    }
-    footer h2{
-        font-size: 25px;
     }
     footer > *:not(h2){
         width: auto;
