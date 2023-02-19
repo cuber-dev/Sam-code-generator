@@ -176,7 +176,7 @@ main .show-copied {
 footer{
     margin-top: 200px;
     background-color: #444343;
-    padding: var(--text-size);
+    padding: 1.5rem 1rem;
     color: white;
 }
 footer h2{
@@ -209,7 +209,9 @@ footer .about-details{
     p,a,.codes-container h3{
         font-size: 5vw;
     }
-    
+    footer{
+      padding: .5rem;
+    }
     footer h2{
         font-size: 25px;
     }
