@@ -33,6 +33,24 @@ div_code_2.innerText = `<div class="container">\n  <img src="https://picsum.phot
 bg_code_1.innerText = `background-image: url("https://unsplash.it/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
 bg_code_2.innerText = `background-image: url("https://picsum/${imgWidth}/${imgHeight}");\nbackground-size: cover;\nbackground-position: center;\n`;
 
+
+//navbar appear code
+
+let navBtnCh = document.querySelector('#nav-button-check')
+let navb = document.querySelector('#nav')
+let ToolsBtn = document.querySelector("#tools-check")
+  
+navBtnCh.addEventListener('click', function checkNav(){
+    if(navBtnCh.checked === true){
+      navb.style.height = '300px'
+    }else{
+      navb.style.height = '0'
+      ToolsBtn.checked = false
+    }
+})
+
+
+
 // ======================= Copy icon code ============================
 
 // Get all copy buttons
@@ -79,5 +97,5 @@ for (let i = 0; i < copyButtons.length; i++) {
 }
 
 
-//navbar disappear code
+
 
