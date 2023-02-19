@@ -67,14 +67,14 @@ header{
     top:0;
     left:0;
     right:0;
-    text-align: center;
     background-color: #444343;
     color: white;
     letter-spacing: 3px;
     text-shadow: -1px 1px 5px #5c4a4a;
-    font-size: min(16px,5vw);
+    font-size: 5vw;
     padding: 1.5rem .1rem;
 }
+header h1{    text-align: center;  }
 /*==================== Nav button styles ===============================*/
 header input{
   display: none;
@@ -111,7 +111,6 @@ header .nav-button {
 /*==================== Nav styles ===============================*/
 #nav :is(a,label){
   color: white; 
-  font-weight: bold; 
   padding: 5px; 
   border-radius: 5px;
   margin: 2px;
@@ -138,8 +137,8 @@ header:has(#nav-button-check:checked) #nav{
 
 /* nested list */
 #nav .inline-nav-ul{
-  font-size: 12px; 
   height: 0;
+  font-size: 0;
   margin: 0 25px;
   overflow: hidden;
 
@@ -297,7 +296,7 @@ footer .about-details{
     h3{
         font-size: 15px;
     }
-    p,a,.codes-container h3{
+    main  p,a,.codes-container h3{
         font-size: 5vw;
     }
     header .nav-button{
