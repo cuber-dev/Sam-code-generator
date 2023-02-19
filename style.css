@@ -3,12 +3,22 @@
 :root{
     --text-size: .9rem;
 }
+html{
+  scroll-padding: 110px;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #0c0c0c;
+  padding-top: 101px; 
+}
 *{
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
     word-wrap: break-word;
     text-overflow: clip;
+    text-decoration: none;
+    list-style: none;
 }
 p{
     text-align: justify;
@@ -21,16 +31,14 @@ a{
     text-decoration: none;
     color: inherit;
 }
-a:is(:hover,:focus,:active){
-    outline: .5px solid #5c4a4a;
-}
+a:is(:focus){outline: .5px solid #5c4a4a;}
+
+:is(header,nav,a,li,ul,label){z-index: 12;}
 :focus{
   outline: .5px solid white;
   outline-offset: 2px; 
 }
-body{
-    background-color: #0c0c0c;
-}
+
 
 ::-webkit-scrollbar{
   height: 5px;
@@ -52,15 +60,94 @@ body{
 /* ================================== Header styles ========================================== */
 
 header{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
     text-align: center;
     background-color: #444343;
     color: white;
     letter-spacing: 3px;
     text-shadow: -1px 1px 5px #5c4a4a;
     font-size: min(16px,5vw);
-    padding: 2rem .1rem;
+    padding: 1.5rem .1rem;
+}
+/*==================== Nav button styles ===============================*/
+header input{
+  display: none;
+}
+header .nav-button {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  top:10px;
+  right: 10px;
+  background: none; 
+  border: none; 
+  transition: all 500ms ease;
+}
+.nav-button .btn-line {
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  margin: 5px 0;
+  display: block; 
+  border-radius: 5px;
+  transition: all 300ms ease;
 }
 
+#nav-button-check:checked + .nav-button .btn-line:nth-of-type(1) {
+  transform: rotate(-40deg) translate(-5px, 6px);
+}
+#nav-button-check:checked + .nav-button .btn-line:nth-of-type(2) {
+  opacity: 0;
+}
+#nav-button-check:checked + .nav-button .btn-line:nth-of-type(3) {
+  transform: rotate(40deg) translate(-6px, -6px);
+}
+/*==================== Nav styles ===============================*/
+#nav :is(a,label){
+  color: white; 
+  font-weight: bold; 
+  padding: 5px; 
+  border-radius: 5px;
+  margin: 2px; 
+}
+#nav{
+  position:fixed;
+  top: 101px;
+  right:-5px;
+  left:-5px;
+  background: black;
+  border-radius:0 0 1rem 1rem;
+  line-height: 35px; 
+  overflow: hidden;
+  height: 0;
+  padding: 0 1rem;
+  transition: 300ms; 
+}
+/* Nav appear */
+header:has(#nav-button-check:checked) #nav{
+  height:300px;
+  padding: 1rem; 
+}
+
+/* nested list */
+#nav .inline-nav-ul{
+  font-size: 12px; 
+  height: 0;
+  margin: 0 25px;
+  overflow: hidden;
+
+}
+/* ================= All events ================================ */
+#nav :is(a,label):is(:focus, :hover, :active){
+  color: #944dff;
+}
+#nav [id="tool-check"]:checked + label + .inline-nav-ul {
+  height: max-content;
+}
+/* =========================================================== */
 /* ================================== Main styles ========================================== */
 main label{
   color: #ffffff;
@@ -208,6 +295,10 @@ footer .about-details{
     }
     p,a,.codes-container h3{
         font-size: 5vw;
+    }
+    header .nav-button{
+      top: 3px;
+      right: 3px;
     }
     footer{
       padding: .5rem;
