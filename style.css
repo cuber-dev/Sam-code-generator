@@ -71,10 +71,10 @@ header{
     color: white;
     letter-spacing: 3px;
     text-shadow: -1px 1px 5px #5c4a4a;
-    font-size: 5vw;
+    font-size: min(16px,5vw);
     padding: 1.5rem .1rem;
 }
-header h1{    text-align: center;  }
+header h1{     text-align: center; }
 /*==================== Nav button styles ===============================*/
 header input{
   display: none;
@@ -82,7 +82,7 @@ header input{
 header .nav-button {
   display: inline-block;
   cursor: pointer;
-  position: fixed;
+  position: fixed; 
   top:10px;
   right: 10px;
   background: none; 
@@ -111,6 +111,7 @@ header .nav-button {
 /*==================== Nav styles ===============================*/
 #nav :is(a,label){
   color: white; 
+  font-weight: bold; 
   padding: 5px; 
   border-radius: 5px;
   margin: 2px;
@@ -118,7 +119,7 @@ header .nav-button {
 }
 #nav{
   position:fixed;
-  top: 101px;
+  top: 86px;
   right:-5px;
   left:-5px;
   background: black;
@@ -128,6 +129,7 @@ header .nav-button {
   height: 0;
   padding: 0 1rem;
   transition: 300ms; 
+  text-align: right; 
 }
 /* Nav appear */
 header:has(#nav-button-check:checked) #nav{
@@ -138,7 +140,6 @@ header:has(#nav-button-check:checked) #nav{
 /* nested list */
 #nav .inline-nav-ul{
   height: 0;
-  font-size: 0;
   margin: 0 25px;
   overflow: hidden;
 
@@ -296,13 +297,15 @@ footer .about-details{
     h3{
         font-size: 15px;
     }
-    main  p,a,.codes-container h3{
-        font-size: 5vw;
-    }
     header .nav-button{
       top: 3px;
       right: 3px;
     }
+    #nav{text-align: left;}
+    main  p,a,.codes-container h3{
+        font-size: 5vw;
+    }
+    
     footer{
       padding: .5rem;
     }
