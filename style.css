@@ -284,12 +284,13 @@ footer > *:not(h2){
     border-radius: var(--text-size);
     padding: var(--text-size);
 }
-footer > *{
-    line-height:40px;
+footer .footer-about{
+  line-height: 30px; 
 }
 footer .about-details{
     display: grid;
     grid-template-columns: 1fr 1fr;
+        line-height:40px;
 }
 
 /* =================================== Mobile styles ======================================*/
