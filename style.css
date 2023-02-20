@@ -308,10 +308,12 @@ footer .main-heading{
     text-align: center;
     text-decoration: underline;
 }
+
 footer > *:not(.main-heading){
     width: 350px;
     border-radius: var(--default);
     padding: var(--default);
+    color: #e7e4e4;
 }
 footer .footer-about{
   line-height: var(--line-height); 
