@@ -34,7 +34,8 @@ html {
 }
 
   body {
-    background-color: #0c0c0c;
+    /* background-color: #0c0c0c; */
+    background-image: url(-\ 1bg-for-image-code.png);
     padding-top: 101px;
     font-size: clamp(var(--mobile-font), 1.2vw, var(--pc-font));
 
@@ -73,7 +74,7 @@ main a:is(:focus){outline: .5px solid #5c4a4a;}
   outline: .5px solid white;
   outline-offset: 2px; 
 }
-:is(header,nav,a,li,ul,label){
+:is(nav,a,li,ul,label){
   z-index: 12;
   outline: none;
 }
@@ -107,6 +108,7 @@ header{
     letter-spacing: 3px;
     text-shadow: -1px 1px 5px #5c4a4a;
     padding: 1.5rem .1rem;
+    z-index: 20;
 }
 header h1{     
   text-align: center; 
