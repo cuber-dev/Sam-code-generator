@@ -25,7 +25,7 @@
   :root {
     --pc-font: 18px;
     --mobile-font: 16px;
-    --font-var3-size: clamp( 22px,  1.5vw , 26px); 
+    --font-var3-size: clamp( 22px,  1.3vw , 26px); 
   }
 }
 html {
