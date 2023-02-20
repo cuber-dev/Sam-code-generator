@@ -1,17 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
 /* ================================== General styles ========================================== */
 
 :root {
-  /* Default font size */
+  /* Default styles*/
   --pc-font: 16px;
   --mobile-font: 14px;
-  --text-size: .9rem;
+  --default: .9rem;
+  
+  /* varient 1 is for Header */
+  --font-var1: 'Lato', sans-serif;
+  
+  /* variant 2 is for default text */
+  --font-var2: sans-serif;
+  
+  /* Varient 3 is for sub headings */
+  --font-var3: 'Roboto',sans-serif;
+  --font-var3-size: clamp( 20px,  1.5vw , 24px); 
+  
+  --line-height: 25px; 
 }
-/* Update font size for larger screens */
+/* Updated font size for larger screens */
 @media screen and (min-width: 768px) {
   :root {
     --pc-font: 18px;
     --mobile-font: 16px;
+    --font-var3-size: clamp( 22px,  1.5vw , 26px); 
   }
 }
 html {
@@ -22,15 +36,17 @@ html {
   body {
     background-color: #0c0c0c;
     padding-top: 101px;
-      font-size: clamp(var(--mobile-font), 1.2vw, var(--pc-font));
+    font-size: clamp(var(--mobile-font), 1.2vw, var(--pc-font));
 
   }
 /*===== converted all font size to clamp =========================*/
 
-*{
+/* ==================== Default styles ============================== */
+
+*{   
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-var2);
     word-wrap: break-word;
     text-overflow: clip;
     text-decoration: none;
@@ -38,12 +54,20 @@ html {
 }
 p{
     text-align: justify;
+    line-height: var(--line-height);
 }
 a{
     text-decoration: none;
     color: inherit;
 }
 main a:is(:focus){outline: .5px solid #5c4a4a;}
+
+/* This is for all sub headings */
+.sub-heading{
+  margin: var(--default) 0;
+  font-family: var(--font-var2);
+  font-weight: bold; 
+}
 
 :focus{
   outline: .5px solid white;
@@ -84,8 +108,10 @@ header{
     text-shadow: -1px 1px 5px #5c4a4a;
     padding: 1.5rem .1rem;
 }
-header h1{     text-align: center; }
-/*==================== Nav button styles ===============================*/
+header h1{     
+  text-align: center; 
+  font-family: var(--font-var1);
+}
 header input{
   display: none;
 }
@@ -118,7 +144,8 @@ header .nav-button {
 #nav-button-check:checked + .nav-button .btn-line:nth-of-type(3) {
   transform: rotate(40deg) translate(-6px, -6px);
 }
-/*==================== Nav styles ===============================*/
+   /*==================== Nav styles ===============================*/
+
 #nav :is(a,label){
   color: white; 
   font-weight: bold; 
@@ -156,6 +183,9 @@ header .nav-button {
   height: max-content;
 }
 /* =========================================================== */
+
+
+/* =========================================================== */
 /* ================================== Main styles ========================================== */
 main label{
   color: #ffffff;
@@ -170,31 +200,30 @@ main{
 main .about-article{
     width: min(98%,550px);
     height: max-content;
-    padding: var(--text-size);
+    padding: var(--default);
     background-color: #ece9e9;
-    border-radius: var(--text-size);
+    border-radius: var(--default);
     line-height: 25px 0;
 }
-main h3{
-    margin: var(--text-size) 0;
-    text-align: left;
-}
 
-main .codes-container{
+
+main .all-codes-container{
     background-color: #ece9e9;
     display: grid;
     row-gap: 1rem;
     width: min(98%,550px);
-    border-radius: var(--text-size);
-    padding: var(--text-size);
+    border-radius: var(--default);
+    padding: var(--default);
 }
-main .code-heading{
+main .main-heading{
    display: inline-block;
-   margin: 3px 0;
+   margin: var(--default) 0;
+   font-family: var(--font-var3);
+   font-size: var(--font-var3-size);
 }
-/* this box class contains the code-box 
-   container and code pre tag */
-main .box{
+/* this code-content-all class contains the 
+   code-box container and code pre tag */
+main .code-content-all{
     width: 100%;
     overflow: auto;
 }
@@ -217,10 +246,11 @@ main .code-box::after{
   width: 100%;
   background-color: rebeccapurple;
 }
-/* pre tag holds the code */
-main pre{
+/* pre tag holds the text-code */
+main .text-code{
     width: 100%;
     padding: 1rem 0;
+    font-size: calc(var(--default) - .1rem) ;
     overflow: auto;
 }
 
@@ -228,10 +258,11 @@ main pre{
 /* =================================== Copy styles ================================ */
 main .copy {
     position: absolute;
-    top: 0px;
+    top: -2px;
     right: 0px;
     padding: 5px;
     z-index: 5;
+    font-size: calc(var(--default) - .1rem);
     color: white;
     background: transparent;
     cursor: pointer;
@@ -273,23 +304,22 @@ footer{
     padding: 1.5rem 1rem;
     color: white;
 }
-footer h2{
+footer .main-heading{
     text-align: center;
     text-decoration: underline;
 }
-footer > *:not(h2){
+footer > *:not(.main-heading){
     width: 350px;
-    margin: var(--text-size);
-    border-radius: var(--text-size);
-    padding: var(--text-size);
+    border-radius: var(--default);
+    padding: var(--default);
 }
 footer .footer-about{
-  line-height: 30px; 
+  line-height: var(--line-height); 
 }
-footer .about-details{
+footer .about-tool-details{
     display: grid;
     grid-template-columns: 1fr 1fr;
-        line-height:40px;
+    line-height:var(--line-height);
 }
 
 /* =================================== Mobile styles ======================================*/
@@ -305,7 +335,7 @@ footer .about-details{
     footer{
       padding: .5rem;
     }
-    footer > *:not(h2){
+    footer > *:not(.main-heading){
         width: auto;
     }
 }
