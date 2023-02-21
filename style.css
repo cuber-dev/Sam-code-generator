@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
 /* ================================== General styles ========================================== */
 
 :root {
@@ -7,7 +8,7 @@
   --pc-font: 16px;
   --mobile-font: 14px;
   --default: .9rem;
-  
+  --default-width: min(98%,550px);
   /* varient 1 is for Header */
   --font-var1: 'Lato', sans-serif;
   
@@ -20,6 +21,7 @@
   
   --line-height: 25px; 
 }
+
 /* Updated font size for larger screens */
 @media screen and (min-width: 768px) {
   :root {
@@ -32,6 +34,7 @@ html {
   scroll-padding: 110px;
   scroll-behavior: smooth;
 }
+/*===== converted all font size to clamp =========================*/
 
   body {
     /* background-color: #0c0c0c; */
@@ -40,7 +43,6 @@ html {
     font-size: clamp(var(--mobile-font), 1.2vw, var(--pc-font));
 
   }
-/*===== converted all font size to clamp =========================*/
 
 /* ==================== Default styles ============================== */
 
@@ -61,7 +63,6 @@ a{
     text-decoration: none;
     color: inherit;
 }
-main a:is(:focus){outline: .5px solid #5c4a4a;}
 
 /* This is for all sub headings */
 .sub-heading{
@@ -70,16 +71,23 @@ main a:is(:focus){outline: .5px solid #5c4a4a;}
   font-weight: bold; 
 }
 
+
+
+/* Default styles for focus and z-index */
 :focus{
   outline: .5px solid white;
   outline-offset: 2px; 
 }
+
+main a:is(:focus){outline: .5px solid #5c4a4a;}
+
 :is(nav,a,li,ul,label){
   z-index: 12;
   outline: none;
 }
+/* ====================================== */
 
-
+/* ================= Scroll bar styles ========================== */
 ::-webkit-scrollbar{
   height: 5px;
   width: 5px;
@@ -96,7 +104,11 @@ main a:is(:focus){outline: .5px solid #5c4a4a;}
     scrollbar-color: lightgrey none; 
     scrollbar-width: thin;
   }
-}
+}/*========================================================================================= */
+
+
+
+
 /* ================================== Header styles ========================================== */
 header{
     position: fixed;
@@ -136,7 +148,7 @@ header .nav-button {
   border-radius: 5px;
   transition: all 300ms ease;
 }
-
+/* ==== hamburger menu animation ======== */
 #nav-button-check:checked + .nav-button .btn-line:nth-of-type(1) {
   transform: rotate(-40deg) translate(-5px, 6px);
 }
@@ -146,7 +158,8 @@ header .nav-button {
 #nav-button-check:checked + .nav-button .btn-line:nth-of-type(3) {
   transform: rotate(40deg) translate(-6px, -6px);
 }
-   /*==================== Nav styles ===============================*/
+   
+/*==================== Nav styles ===============================*/
 
 #nav :is(a,label){
   color: white; 
@@ -171,13 +184,13 @@ header .nav-button {
   text-align: right; 
 }
 
-/* nested list */
+/* nested list inside tools li */
 #nav .inline-nav-ul{
   height: 0;
   margin: 0 25px;
   overflow: hidden;
 }
-/* ================= All events ================================ */
+/* ================= events of nav bar ================================ */
 #nav :is(a,label):is(:focus, :hover, :active){
   color: #944dff;
 }
@@ -189,9 +202,8 @@ header .nav-button {
 
 /* =========================================================== */
 /* ================================== Main styles ========================================== */
-main label{
-  color: #ffffff;
-}
+
+
 main{
     display: flex;
     flex-direction: column;
@@ -199,8 +211,9 @@ main{
     row-gap: 2rem;
     padding: 25px;
 }
+
 main .about-article{
-    width: min(98%,550px);
+    width: var(--default-width) ;
     height: max-content;
     padding: var(--default);
     background-color: #ece9e9;
@@ -213,16 +226,19 @@ main .all-codes-container{
     background-color: #ece9e9;
     display: grid;
     row-gap: 1rem;
-    width: min(98%,550px);
+    width: var(--default-width) ;
     border-radius: var(--default);
     padding: var(--default);
 }
+
+/* Main headings */
 main .main-heading{
    display: inline-block;
    margin: var(--default) 0;
    font-family: var(--font-var3);
    font-size: var(--font-var3-size);
 }
+
 /* this code-content-all class contains the 
    code-box container and code pre tag */
 main .code-content-all{
