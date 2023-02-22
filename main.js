@@ -49,8 +49,12 @@ navBtnCh.addEventListener('click', function checkNav(){
     }
 })
 
+
 // get all the navigation links
 const navLinks = document.querySelectorAll('#nav a');
+
+// set the default active link to 'Home'
+navLinks[0].classList.add('active-link');
 
 // loop through the links and add click event listeners
 navLinks.forEach(link => {
