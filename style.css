@@ -307,10 +307,6 @@ footer .about-tool-details{
 
 /* =================================== Mobile styles ======================================*/
 @media (max-width:768px){
-    header .nav-button{
-      top: 3px;
-      right: 3px;
-    }
     header {
       display: block;
       padding: 1.5rem .1rem;
@@ -397,9 +393,6 @@ footer .about-tool-details{
         background: transparent;
         border: none;
     }
-/*   #nav a:is([active],:hover){
-  color: black; 
-} */
   #nav  ul:hover > li > a:not(:hover){
     opacity: 0.8;
   }
