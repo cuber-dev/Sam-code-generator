@@ -156,10 +156,15 @@ a{
       .inline-nav-ul *{
           background-color: #444343;
       }
-      #nav :where(a,label):where([active],:focus, :hover, :active){
+      /* =====================================
+      This active link is for 
+      highlighting the selected I'd and it is for 
+      both PC and mobile viewport 
+      ==========================================*/
+      #nav .active-link {
           border-bottom:1px solid white ;
           background-color: #292727;
-      }
+      } 
        #nav ul:hover > li > a:not(:hover) {
          opacity: 0.8;
          border: none;
@@ -392,17 +397,8 @@ footer .about-tool-details{
         margin: 3px 25px;
         overflow: hidden;
     }
-    /* ================= events of nav bar ================================ */
-    #nav :is(a,label):is([active]:focus, :hover, :active){
-        color: #944dff;
-        background: transparent;
-        border-bottom: none;
-    }
-  #nav  ul:hover > li > a:not(:hover){
-    opacity: 0.8;
-    border: none;
-    background: none;
-  }
+    /* ================= events of inline ul ================================ */
+
     #nav [id="tool-check"]:checked + label + .inline-nav-ul {
         display: block;
     }

@@ -49,6 +49,19 @@ navBtnCh.addEventListener('click', function checkNav(){
     }
 })
 
+// get all the navigation links
+const navLinks = document.querySelectorAll('#nav a');
+
+// loop through the links and add click event listeners
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    // remove the active class from all links
+    navLinks.forEach(link => link.classList.remove('active-link'));
+
+    // add the active class to the clicked link
+    this.classList.add('active-link');
+  });
+});
 
 
 // ======================= Copy icon code ============================
