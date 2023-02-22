@@ -166,7 +166,6 @@ a{
           background-color: #292727;
       } 
        #nav ul:hover > li > a:not(:hover) {
-         opacity: 0.8;
          border: none;
          background: none; 
        }
@@ -186,9 +185,7 @@ main{
 }
 
 
-
-
-main .all-codes-container{
+main .sections-container{
     background-color: #ece9e9;
     display: grid;
     row-gap: 1rem;
