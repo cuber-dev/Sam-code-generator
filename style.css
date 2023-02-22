@@ -185,14 +185,7 @@ main{
     padding: 25px;
 }
 
-main .about-article{
-    width: var(--default-width) ;
-    height: max-content;
-    padding: var(--default);
-    background-color: #ece9e9;
-    border-radius: var(--default);
-    line-height: 25px 0;
-}
+
 
 
 main .all-codes-container{
@@ -287,6 +280,13 @@ main .show-copied {
   transition: all 300ms ease-in;
 }
 
+main .about-article {
+  width: var(--default-width);
+  height: max-content;
+  background-color: #ece9e9;
+  border-top: 0.5px solid #000;
+  line-height: 25px 0;
+}
 /* ================================== Footer styles ========================================== */
 
 footer{
