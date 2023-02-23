@@ -127,7 +127,7 @@ a{
           font-family: var(--font-var1);
       }
       header input{
-          display: none;
+        display: none;
       }
       header nav li, nav label{
           display: inline-block;

@@ -68,6 +68,21 @@ navLinks.forEach(link => {
 });
 
 
+// For inline tool  Ul
+navb.addEventListener("click", (e) => {
+  const myEl = document.getElementById("tool-check");
+  let targetEl = e.target; // clicked element 
+  console.log(e.target)
+  if (targetEl == myEl) {
+
+    console.log('clicked outside')
+    return;
+  } else {
+    myEl.checked = false
+  }
+
+});
+
 // ======================= Copy icon code ============================
 
 // Get all copy buttons
