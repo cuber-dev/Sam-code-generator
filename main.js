@@ -42,10 +42,10 @@ let ToolsBtn = document.querySelector("#tools-check")
   
 navBtnCh.addEventListener('click', function checkNav(){
     if(navBtnCh.checked === true){
-      navb.style.height = '300px'
+      navb.style.height = '300px';
     }else{
-      navb.style.height = '0'
-      ToolsBtn.checked = false
+      navb.style.height = '0';
+      ToolsBtn.checked = false;
     }
 })
 
