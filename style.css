@@ -17,7 +17,7 @@
   
   /* Varient 3 is for sub headings */
   --font-var3: 'Roboto',sans-serif;
-  --font-var3-size: clamp( 20px,  1.4vw , 24px); 
+  --font-var3-size: clamp( 20px, .9vw , 24px); 
   
   --line-height: 25px; 
 }
@@ -27,7 +27,7 @@
   :root {
     --pc-font: 18px;
     --mobile-font: 16px;
-    --font-var3-size: clamp( 22px,  1.2vw , 26px); 
+    --font-var3-size: clamp( 22px,  1vw , 26px); 
   }
 }
 html {
