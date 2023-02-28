@@ -165,6 +165,10 @@ a{
           border-bottom:1px solid white ;
           background-color: #292727;
       } 
+      #nav a:is(:hover,:focus){
+        border-bottom:1px solid white;
+        background-color: #292727;
+      }
        #nav ul:hover > li > a:not(:hover) {
          border: none;
          background: none; 
