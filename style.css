@@ -148,12 +148,15 @@ a{
           position: absolute;
           top: 65px;
           left: 0px;
-          display: inline-block;
+          display: flex;
+          flex-direction: column;
           background-color: none;
           white-space: nowrap;
           opacity: 0;
       }
-      .inline-nav-ul *{
+      .inline-nav-ul li{
+          width: auto;
+          padding: .2rem 0;
           background-color: #444343;
       }
       /* =====================================
@@ -166,8 +169,9 @@ a{
           background-color: #292727;
       } 
       #nav a:is(:hover,:focus){
-        border-bottom:1px solid white;
-        background-color: #292727;
+          border-bottom:1px solid white ;
+          background-color: #292727;
+
       }
        #nav ul:hover > li > a:not(:hover) {
          border: none;
