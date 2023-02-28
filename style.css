@@ -8,7 +8,7 @@
   --pc-font: 16px;
   --mobile-font: 14px;
   --default: .9rem;
-  --default-width: min(98%,550px);
+  --default-width: min(95%,550px);
   /* varient 1 is for Header */
   --font-var1: 'Lato', sans-serif;
   
@@ -188,8 +188,9 @@ a{
 main{
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    row-gap: 8rem;
     padding: 25px;
 }
 
@@ -197,6 +198,7 @@ main{
 main .sections-container{
     background-color: #ece9e9;
     display: grid;
+    margin: auto;
     row-gap: 1rem;
     width: var(--default-width) ;
     border-radius: var(--default);
