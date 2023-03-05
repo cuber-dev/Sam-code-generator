@@ -8,7 +8,7 @@
   --pc-font: 16px;
   --mobile-font: 14px;
   --default: .9rem;
-  --default-width: min(90%,540px);
+  --default-width: min(100%,555px);
   /* varient 1 is for Header */
   --font-var1: 'Lato', sans-serif;
   
@@ -190,7 +190,7 @@ main{
     justify-content: center;
     align-items: center;
     row-gap: 8rem;
-    padding: 25px;
+    padding: 15px;
 }
 
 
