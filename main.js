@@ -36,25 +36,27 @@ bg_code_2.innerText = `background-image: url("https://picsum/${imgWidth}/${imgHe
 
 //navbar appear code
 
-let navBtnCh = document.querySelector('#nav-button-check')
-let navb = document.querySelector('#nav')
+let navBtnCheck = document.querySelector('#nav-button-check')
+let navBar = document.querySelector('#nav')
 let ToolsBtn = document.querySelector("#tools-check")
   
-navBtnCh.addEventListener('click', function checkNav(){
-    if(navBtnCh.checked === true){
-      navb.style.height = '300px';
+navBtnCheck.addEventListener('click', () => {
+    if(navBtnCheck.checked === true){
+      navBar.style.height = '300px';
     }else{
-      navb.style.height = '0';
+      navBar.style.height = '0';
       ToolsBtn.checked = false;
     }
-})
+});
 
-window.addEventListener('click',() => {
-  if(navb.style.height === "300px"){
-    navb.style.height = "0";
+window.addEventListener('click', (e) => {
+  if(!e.target.matches('nav') && !e.target.matches('input')){
+    navBar.style.height = '0';
+    navBtnCheck.checked = false;
     ToolsBtn.checked = false;
   }
 });
+
 
 // get all the navigation links
 const navLinks = document.querySelectorAll('#nav a');
@@ -75,7 +77,7 @@ navLinks.forEach(link => {
 
 
 // For inline tool  Ul
-navb.addEventListener("click", (e) => {
+navBar.addEventListener("click", (e) => {
   const myEl = document.getElementById("tool-check");
   let targetEl = e.target; // clicked element 
   console.log(e.target)
