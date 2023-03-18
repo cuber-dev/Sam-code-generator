@@ -74,10 +74,10 @@ navBtnCheck.addEventListener('click', () => {
   }
 });
 
-document.addEventListener('click', (e) => {
+// Event delegation
+window.addEventListener('click', (e) => {
   const children = e.target;
   if(isNavBarOpen && !children.matches('nav') && !children.matches('input') && !children.matches('label')) {
-    console.log('not nav ');
     hideNavBar();
   }
 });
