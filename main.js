@@ -3,8 +3,8 @@
 let imgHeight;
 let imgWidth;
 //================ Taking input from user =======================
-let getWidth = parseInt(window.prompt('Please Enter the Width You Want\nIt must be a number'), 10);
-let getHeight = parseInt(window.prompt('Please Enter the Height You Want\nIt must be a number'), 10);
+let getWidth = Number(prompt('Please Enter the Width You Want\nIt must be a number'), 10);
+let getHeight = Number(prompt('Please Enter the Height You Want\nIt must be a number'), 10);
 
 if (isNaN(getWidth) || isNaN(getHeight)) {
   // Check if either input is not a number
@@ -35,28 +35,59 @@ bg_code_2.innerText = `background-image: url("https://picsum/${imgWidth}/${imgHe
 
 
 //navbar appear code
-
+/*
 let navBtnCheck = document.querySelector('#nav-button-check')
 let navBar = document.querySelector('#nav')
 let ToolsBtn = document.querySelector("#tools-check")
-  
+
 navBtnCheck.addEventListener('click', () => {
-    if(navBtnCheck.checked === true){
+    if(navBtnCheck.checked){
       navBar.style.height = '300px';
     }else{
-      navBar.style.height = '0';
-      ToolsBtn.checked = false;
+      hideNavBar();
     }
 });
-
 window.addEventListener('click', (e) => {
-  if(!e.target.matches('nav') && !e.target.matches('input')){
-    navBar.style.height = '0';
-    navBtnCheck.checked = false;
-    ToolsBtn.checked = false;
+  if(!navBtnCheck.checked && navBar.style.height === '300px'){
+    hideNavBar();
+   }else{
+      navBar.style.height = '300px';
+   }
+});
+
+const hideNavBar = () => {
+  navBar.style.height = '0px';
+  navBtnCheck.checked = false;
+  ToolsBtn.checked = false;
+}*/
+let navBtnCheck = document.querySelector('#nav-button-check');
+let navBar = document.querySelector('#nav');
+let ToolsBtn = document.querySelector("#tools-check");
+let isNavBarOpen = false;
+
+navBtnCheck.addEventListener('click', () => {
+  if (navBtnCheck.checked) {
+    navBar.style.height = '300px';
+    isNavBarOpen = true;
+  } else {
+    hideNavBar();
   }
 });
 
+document.addEventListener('click', (e) => {
+  const children = e.target;
+  if(isNavBarOpen && !children.matches('nav') && !children.matches('input') && !children.matches('label')) {
+    console.log('not nav ');
+    hideNavBar();
+  }
+});
+
+const hideNavBar = () => {
+  navBar.style.height = '0px';
+  navBtnCheck.checked = false;
+  ToolsBtn.checked = false;
+  isNavBarOpen = false;
+};
 
 // get all the navigation links
 const navLinks = document.querySelectorAll('#nav a');
