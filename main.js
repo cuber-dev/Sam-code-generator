@@ -49,6 +49,12 @@ navBtnCh.addEventListener('click', function checkNav(){
     }
 })
 
+window.addEventListener('click',() => {
+  if(navb.style.height === "300px"){
+    navb.style.height = "0";
+    ToolsBtn.checked = false;
+  }
+});
 
 // get all the navigation links
 const navLinks = document.querySelectorAll('#nav a');
